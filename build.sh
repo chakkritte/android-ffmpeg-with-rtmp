@@ -22,7 +22,7 @@ function die {
 
 #-- try to intelligently determine where the Android NDK is installed
 function find_ndk {
-  ndk_name="android-ndk-r10"
+  ndk_name="android-ndk-r10d"
   top_level_paths_to_search="/Users /Applications /usr"
   found_ndk=""
   for d in $top_level_paths_to_search; do
@@ -79,7 +79,7 @@ function initialize {
     echo "OS_ARCH=$OS_ARCH" > ${config_file}
     echo "NDK=$NDK" >> ${config_file}
     echo "SYSROOT=${NDK}/platforms/android-19/arch-arm" >> ${config_file}
-    echo "TOOLCHAIN=${NDK}/toolchains/arm-linux-androideabi-4.8/prebuilt/${OS_ARCH}" >> ${config_file}
+    echo "TOOLCHAIN=${NDK}/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86" >> ${config_file}
   fi
 
   # show the user our configuration, then import it
